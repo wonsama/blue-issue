@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "security.aes256.privatekey",
+      "type": "java.lang.String",
+      "description": "AES 256 암복호화에서 사용되는 키'"
+    },
+    {
+      "name": "token.validity.minutes",
+      "type": "java.lang.String",
+      "description": "토큰 유효시간 (분)"
+    }
+  ]
+}
