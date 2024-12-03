@@ -1,5 +1,6 @@
 package dev.wonsama.issue.controller;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,6 +37,8 @@ public class TokenController {
   @Operation(summary = "Token 검증", description = "Token 이 유효한지 검증합니다. 1회용 Token 으로 사용 후 만료됩니다.")
   public VerifyTokenResDto verifyToken(@RequestBody VerifyTokenReqDto dto, BindingResult bindingResult) {
 
+    log.info("2.3. /api/issue/token/validate : ", ToStringBuilder.reflectionToString(dto));
+
     return tokenService.verifyToken(dto);
   }
 
@@ -49,6 +52,8 @@ public class TokenController {
   @PostMapping
   @Operation(summary = "Token 생성", description = "Token 을 생성합니다. 1회용, 유효시간(기본 : 1분)")
   public CreateTokenResDto createToken(@RequestBody CreateTokenReqDto dto, BindingResult bindingResult) {
+
+    log.info("2.2. /api/issue/token : ", ToStringBuilder.reflectionToString(dto));
 
     return tokenService.createToken(dto);
   }

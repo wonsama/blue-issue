@@ -1,10 +1,10 @@
-package dev.wonsama.token;
+package dev.wonsama.issue;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TokenApplicationTests {
+class IssueApplicationTests {
 
 	@Test
 	void contextLoads() {
